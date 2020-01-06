@@ -9,7 +9,7 @@ Let's get started.
 
 ## Prerequisites
 
-To your Maven application you need to add the `io.fabric8:kubernetes-api` dependency inside the `pom.xml` file
+To your Maven application you need to add the `io.fabric8:kubernetes-client` dependency inside the `pom.xml` file
 
 ```xml
 <dependency>
@@ -102,7 +102,7 @@ kubectl apply -f pod.yaml
 
 Instead of exporting the JSON and feeding it to kubectl, you can send the payload to the cluster directly.
 
-You can use the [Fabric8 Kubernetes API](https://github.com/kubernetes-client/javascript) to send the Pod definition to the cluster.
+You can use the [Fabric8 Kubernetes API](https://github.com/fabric8io/kubernetes-client) to send the Pod definition to the cluster.
 
 Here's the code:
 
