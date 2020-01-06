@@ -72,7 +72,7 @@ func createPod(environment string) *corev1.Pod {
 
 Go on and save the above code in a file named `main.go`.
 
-> The above code uses several packages from the client-go library. You can find the documentation of every Go package by pasting its full import path into the search field on [godoc.org](https://godoc.org/). For example, [here](https://godoc.org/k8s.io/api/core/v1) is the documentation of the `k8s.io/api/core/v1` package.
+> The above code uses several packages from the [client-go](https://github.com/kubernetes/client-go) library. You can find the documentation of every Go package by pasting its full import path into the search field on [godoc.org](https://godoc.org/). For example, the documentation of the `k8s.io/api/core/v1` package can be found on [godoc.org/k8s.io/api/core/v1](https://godoc.org/k8s.io/api/core/v1).
 
 You can then execute your program with:
 
@@ -130,7 +130,7 @@ You can verify that the Pod has been created correctly with:
 kubectl get pods
 ```
 
-## Creating an object
+## Submitting a resource definition to the cluster
 
 Instead of saving the JSON resource definition to a file and then using kubectl to submit it to the cluster, you can submit the resource definition to the cluster directly in your code.
 
@@ -197,6 +197,6 @@ kubectl get pods
 
 ## What's next
 
-As you can imagine, this was just a short demo. You can compose any type of Kubernetes object with the Go client library and you can create, read, updated, and delete these objects in your Kubernetes cluster.
+As you can imagine, this was just a short demo. You can compose any type of Kubernetes object with the Go client library and you can create, read, update, and delete these objects in your Kubernetes cluster.
 
 Feel free to check out the [example programs](https://github.com/kubernetes/client-go/tree/master/examples) of the Go client library.
