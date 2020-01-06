@@ -1,0 +1,13 @@
+{
+  "name": "templating-kubernetes",
+  "version": "1.0.0",
+  "description": "Templating Kubernetes resources with Javascript",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Learnk8s Ltd",
+  "license": "MIT",
+  "dependencies": {
+    "@kubernetes/client-node": "^0.11.0",
+    "kubernetes-models": "^0.7.3"
+  }
+}
