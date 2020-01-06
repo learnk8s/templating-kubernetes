@@ -28,7 +28,12 @@ namespace kubectl
                         new V1Container()
                         {
                             Name =  "test-container",
-                            Image = "k8s.gcr.io/busybox"
+                            Image = "k8s.gcr.io/busybox",
+                            Env = new List<V1EnvVar>(){
+                                new V1EnvVar(){
+                                    Name="ENV", Value="dev"
+                                }
+                            }
                         }
                     }
                 }

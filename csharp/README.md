@@ -33,6 +33,12 @@ The output is a JSON object for the Pod.
   "spec": {
     "containers": [
       {
+        "env": [
+          {
+            "name": "ENV",
+            "value": "dev"
+          }
+        ],
         "image": "k8s.gcr.io/busybox",
         "name": "test-container"
       }
