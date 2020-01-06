@@ -13,17 +13,11 @@ Ensure that you have installed .NET Core 3.1. See [documentation](https://dotnet
 
 ## Generating Pod definitions
 
-Navigate into `genyaml` folder.
-
-Build project:
+You can generate yaml by navigating to `genyaml` project and running it.
 
 ```shell
+cd genyaml
 dotnet build
-```
-
-Run project: 
-
-```shell
 dotnet run
 ```
 
@@ -62,32 +56,14 @@ kubectl apply -f pod.yaml
 
 Instead of exporting the JSON and feeding it to kubectl, you can send the payload to the cluster directly.
 
-You can use the [official Kubernetes client library](https://github.com/kubernetes-client/javascript) to send the Pod definition to the cluster.
+You can use the [official Kubernetes client library](https://github.com/kubernetes-client/csharp) to send the Pod definition to the cluster.
 
-Here's the code:
-
-```js
-const { Pod, Container } = require('kubernetes-models/v1')
-const k8s = require('@kubernetes/client-node')
-const kc = new k8s.KubeConfig()
-
-// Using the default credentials for kubectl
-kc.loadFromDefault()
-const k8sApi = kc.makeApiClient(k8s.CoreV1Api)
-
-function createPod(environment = 'production') {
-  /* return pod definition */
-}
-
-const pod = createPod('dev')
-
-k8sApi.createNamespacedPod('default', pod).then(() => console.log('success'))
-```
-
-Assuming you are connected to a running cluster, you can execute the script with:
+Assuming you are connected to a running cluster, you can create the pod by navigating to `kubectl` project and running it.
 
 ```shell
-node kubectl.js
+cd kubectl
+dotnet build
+dotnet run
 ```
 
 And you can verify that the Pod was created with:
@@ -98,4 +74,4 @@ kubectl get pods
 
 ## What's next
 
-As you can imagine, this is a short demo and you can build more complex objects and use the power of Javascript to compose large objects from smaller ones.
+As you can imagine, this is a short demo and you can build more complex objects and use the power of dotnet to compose large objects from smaller ones.
