@@ -1,4 +1,4 @@
-# Templating Kubernetes resources with Javascript
+# Templating Kubernetes resources with .NET Core
 
 In this section you will learn how to use Javascript to:
 
@@ -9,73 +9,41 @@ Let's get started.
 
 ## Prerequisites
 
-Make sure you install all the dependencies with:
-
-```shell
-npm install
-```
+Ensure that you have installed .NET Core 3.1. See [documentation](https://dotnet.microsoft.com/download) for installation instructions.
 
 ## Generating Pod definitions
 
-The code is short:
+Navigate into `genyaml` folder.
 
-```js
-const { Pod, Container } = require('kubernetes-models/v1')
-
-function createPod(environment = 'production') {
-  return new Pod({
-    metadata: {
-      name: 'test-pod',
-    },
-    spec: {
-      containers: [
-        new Container({
-          name: 'test-container',
-          image: 'k8s.gcr.io/busybox',
-          env: [{ name: 'ENV', value: environment }],
-        }),
-      ],
-    },
-  })
-}
-
-const pod = createPod('dev')
-
-// Any valid JSON is also valid YAML
-const json = JSON.stringify(pod, null, 2)
-
-console.log(json)
-```
-
-You can execute the `gen-yaml.js` script with:
+Build project:
 
 ```shell
-node gen-yaml.js
+dotnet build
+```
+
+Run project: 
+
+```shell
+dotnet run
 ```
 
 The output is a JSON object for the Pod.
 
 ```json
 {
+  "apiVersion": "v1",
+  "kind": "Pod",
   "metadata": {
     "name": "test-pod"
   },
   "spec": {
     "containers": [
       {
-        "name": "test-container",
         "image": "k8s.gcr.io/busybox",
-        "env": [
-          {
-            "name": "ENV",
-            "value": "dev"
-          }
-        ]
+        "name": "test-container"
       }
     ]
-  },
-  "apiVersion": "v1",
-  "kind": "Pod"
+  }
 }
 ```
 
@@ -86,7 +54,7 @@ YAML is a superset of JSON and any JSON file is also a valid YAML file.
 You can create the Pod in the cluster with the following commands:
 
 ```shell
-node gen-yaml.js > pod.yaml
+dotnet run > pod.yaml
 kubectl apply -f pod.yaml
 ```
 
