@@ -13,7 +13,7 @@ Let's get started.
 
 Make sure you have the `go` command installed. You can find installation instructions in the [Go documentation](https://golang.org/dl/).
 
-## Generating a resource definition
+## Generating a Pod resource definition
 
 First, create a new directory for the program that you are going to write:
 
@@ -82,7 +82,7 @@ go run main.go
 
 The output is the JSON resource definition of a Pod.
 
-Note that this JSON has no newlines and indentation, which makes it hard to read. If you want, you can pretty-print the JSON with `jq`:
+Note that this JSON has no newlines and indentation, which makes it hard to read. If you want, you can pretty-print the JSON with [`jq`](https://stedolan.github.io/jq/):
 
 ```shell
 $ go run main.go | jq
@@ -130,7 +130,7 @@ You can verify that the Pod has been created correctly with:
 kubectl get pods
 ```
 
-## Submitting a resource definition to the cluster
+## Submitting a Pod resource definition to the cluster
 
 Instead of saving the JSON resource definition to a file and then using kubectl to submit it to the cluster, you can submit the resource definition to the cluster directly in your code.
 
