@@ -9,7 +9,7 @@ Let's get started.
 
 ## Prerequisites
 
-Make you you install all the dependencies with:
+Make sure you install all the dependencies with:
 
 ```shell
 npm install
