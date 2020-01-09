@@ -5,3 +5,4 @@ This repository is meant to demonstrate how to create definitions for Kubernetes
 You can find examples in the following languages:
 
 - [Javascript](javascript/README.md)
+- [Go](go/README.md)
