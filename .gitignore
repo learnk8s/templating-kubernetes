@@ -7,3 +7,6 @@ npm-debug.log
 .vscode/
 bin
 obj
+.idea/
+target/
+*.iml
