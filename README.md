@@ -8,6 +8,6 @@ You can find examples in the following languages:
 - [Go](go/README.md)
 - [Python](python/README.md)
 - [Node.js](javascript/README.md)
-- [csharp](csharp/README.md)
+- [C#](csharp/README.md)
 
 Feel free to contribute if can translate the examples in other languages.
