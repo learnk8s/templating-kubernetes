@@ -15,7 +15,7 @@ function createPod(environment = 'production') {
       containers: [
         new Container({
           name: 'test-container',
-          image: 'k8s.gcr.io/busybox',
+          image: 'nginx',
           env: [{ name: 'ENV', value: environment }],
         }),
       ],

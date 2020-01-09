@@ -54,7 +54,7 @@ public class KubernetesClientCLI {
                 .withNewSpec()
                 .addNewContainer()
                 .withName("test-container")
-                .withImage("k8s.gcr.io/busybox")
+                .withImage("nginx")
                 .withEnv(new EnvVarBuilder().withName("ENV").withValue(environment).build())
                 .endContainer()
                 .endSpec()

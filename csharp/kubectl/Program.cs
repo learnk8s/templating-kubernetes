@@ -27,8 +27,8 @@ namespace kubectl
                     {
                         new V1Container()
                         {
-                            Name =  "test-container",
-                            Image = "k8s.gcr.io/busybox",
+                            Name = "test-container",
+                            Image = "nginx",
                             Env = new List<V1EnvVar>(){
                                 new V1EnvVar(){
                                     Name="ENV", Value="dev"
@@ -38,7 +38,7 @@ namespace kubectl
                     }
                 }
             };
-            
+
             var result = client.CreateNamespacedPod(pod, "default");
             Console.WriteLine(result);
         }
